@@ -1,4 +1,4 @@
-package interfaceEx.ex02.VehicleEx02;
+package interfaceEx.ex02.vchicleEx01;
 
 public interface Vehicle {
       public void run();

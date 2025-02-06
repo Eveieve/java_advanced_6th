@@ -1,4 +1,4 @@
-package interfaceEx.ex02.VehicleEx02;
+package interfaceEx.ex02.vehicleEx02;
 
 public class DriverMain {
     public static void main(String[] args) {

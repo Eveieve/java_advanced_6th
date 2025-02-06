@@ -1,4 +1,4 @@
-package interfaceEx.ex02.CarEx;
+package interfaceEx.ex02.carEx;
 
 public class KumhoTire implements Tire {
     @Override

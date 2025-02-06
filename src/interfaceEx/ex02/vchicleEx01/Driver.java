@@ -1,4 +1,4 @@
-package interfaceEx.ex02.VehicleEx02;
+package interfaceEx.ex02.vchicleEx01;
 
 public class Driver {
     //메소드 선언부에서 매개변수 클래스타입의 매개변수

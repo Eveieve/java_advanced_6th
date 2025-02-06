@@ -1,4 +1,4 @@
-package interfaceEx.ex02.VehicleEx01;
+package interfaceEx.ex02.vehicleEx02;
 
 public class Taxi implements Vehicle {
     @Override
