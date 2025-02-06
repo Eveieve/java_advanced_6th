@@ -10,8 +10,7 @@ public class CarMain {
 
 
         //KumohoTire 교환
-        mycar.tire1 = new KumhoTire();
-        mycar.tire2 = new KumhoTire();
+
 
         mycar.run();
 
