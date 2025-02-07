@@ -3,11 +3,7 @@ package innerClass.ex06.javabeans;
 public class HamburgerLotteria {
     public static void main(String[] args) {
         Hamburger 선민 = new Hamburger();
-        선민.setBun(2);
-        선민.setPatty(3);
-        선민.setCheese(2);
-        선민.setLettuce(1);
-        선민.setBacon(2);
+
         Hamburger 유진 = new Hamburger();
         Hamburger 성빈 = new Hamburger();
 
