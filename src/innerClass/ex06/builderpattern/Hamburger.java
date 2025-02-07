@@ -5,8 +5,8 @@ package innerClass.ex06.builderpattern;
 
 public class Hamburger {
     //필수 멤버
-    private int bun;
-    private int patty;
+    private String bun;
+    private String patty;
 
     //선택 멤버
     private boolean cheese;
@@ -14,7 +14,8 @@ public class Hamburger {
     private boolean tomato;
     private boolean bacon;
 
-    public Hamburger(BurgerBuilder builder) {
+
+    private Hamburger(BurgerBuilder builder) {
         this.bun = builder.bun;
         this.patty = builder.patty;
         this.cheese = builder.cheese;
@@ -24,13 +25,18 @@ public class Hamburger {
     }
 
     public static class BurgerBuilder {
-        private int bun;
-        private int patty;
+        private String bun;
+        private String patty;
 
         private boolean cheese = false;
         private boolean lettuce = false;
         private boolean tomato = false;
         private boolean bacon = false;
+
+        public BurgerBuilder(String bun, String patty){
+            this.bun = bun;
+            this.patty = patty;
+        }
         //선택적 요소를 단계적으로 추가할 수 있도록 메서드를 설계
 
         public BurgerBuilder addCheese(){
