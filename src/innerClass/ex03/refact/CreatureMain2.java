@@ -3,7 +3,7 @@ package innerClass.ex03.refact;
 class Creature2 {
     private int life = 100;
 
-    // private class, 오로지 Creature2 외부에서만 접근 가능한 내부 클래스 생성
+    // private class, 오로지 Creature2 에서만 접근 가능한 내부 클래스 생성
     private class Animal2 {
         private String name = "Tiger";
 

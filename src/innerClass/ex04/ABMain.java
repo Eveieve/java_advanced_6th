@@ -28,7 +28,7 @@ class A {
 public class ABMain {
 
     public static void main(String[] args) {
-        //정적 멤버 클래스 B 는 A.B() 생성 
+        //정적 멤버 클래스 B 는 A.B() 생성
         A.B b = new A.B();
     }
 }
