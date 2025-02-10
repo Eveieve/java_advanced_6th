@@ -1,0 +1,14 @@
+A대학의 학생클래스(Student)
+학생 필드
+         id
+         name
+         major
+         grade ="freshman" 초기값
+         phoneNumber;
+         address;
+
+id, name ,major 은 필수 멤버이다. 나머지는 선택멤버이다.
+학생객체를 builder 패턴을 적용하여
+생성하세요.
+
+학생 2명을 생성해 주세요~
