@@ -18,7 +18,8 @@ Object클래스
 - String toString()
 
 - clone 메소드  : 객체를 깊은 복사(deep copy) 할때 사용하는 메소드
-
+Object.clone()메소드는 인스턴스 객체의 복제를 위한 메소드
+해당 인스턴스를 복제해서 새로운 인스턴스를 생성해 그 참조값을 반환다.
 
 
 
