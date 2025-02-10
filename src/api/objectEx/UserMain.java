@@ -1,4 +1,4 @@
-package api;
+package api.objectEx;
 
 import java.util.Arrays;
 
@@ -44,7 +44,7 @@ public class UserMain {
         System.out.println(arrayObj1[0].getId());
         arrayObj1[0].setId(999);    //복사한 arrayobj1의 첫번째 객체의 멤버값을 변경
 
-        //원본과 복사본의 값이 다름 확인 
+        //원본과 복사본의 값이 다름 확인
         System.out.println(arrayObj[0].getId());
         System.out.println(arrayObj1[0].getId());
 
