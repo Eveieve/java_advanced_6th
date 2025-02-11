@@ -1,0 +1,7 @@
+java.lang.Class 클래스
+Class객체를 이용: 클래스에 대한 모든 정보(메타데이터 : 멤버의 이름 ,수, 메소드이름)
+Reflection API : 구체적인 클래스 타입을 알지 못하더라도, 그 클래스의 정보에 접근 할 수 있도록 해주는 자바기법
+                 객체를 통해 클래스의 정보를 분석하여 런타임에 클래스의 동작을 검사하거나 조작하는 프로그램 기법
+
+                 프레임워크, 라이브러리에서 많이 사용됨. 스프링 DI(dependency injection), Proxy, ModelMapper
+                 Spring, Springboo, Hibernate, Lombok 등에서 적용됨
