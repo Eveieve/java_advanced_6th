@@ -65,3 +65,23 @@ class ClassName<T extends ClassName>{}
 - Supplier<T> : 타입 T의 매개변수를 받고, 타입 T의 값을 반환
 - Function<T,R> : 타입 T의 매개변수 받고, 타입 R의 값을 반환
 - Predicate<T> : 타입 T의 매개변수 받고 불리언 값 반환
+
+실습예제)
+-Course 클래스  : registerCourse1() => 모든 사람들이 들을 수 있는 과정 등록
+                 registerCourse2() => 학생만 과정 등록
+                 registerCourse3() => 직장인과 일반인만 과정 등록
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
