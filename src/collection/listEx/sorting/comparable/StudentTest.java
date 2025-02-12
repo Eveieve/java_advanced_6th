@@ -1,4 +1,4 @@
-package collection.listEx.sorting;
+package collection.listEx.sorting.comparable;
 
 public class StudentTest {
     public static void main(String[] args) {

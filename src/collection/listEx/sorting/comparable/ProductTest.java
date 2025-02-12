@@ -1,4 +1,4 @@
-package collection.listEx.sorting;
+package collection.listEx.sorting.comparable;
 
 import java.util.*;
 
