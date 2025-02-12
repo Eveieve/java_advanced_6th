@@ -1,4 +1,4 @@
-package collection.listEx;
+package collection.listEx.board;
 
 import java.util.ArrayList;
 import java.util.List;
