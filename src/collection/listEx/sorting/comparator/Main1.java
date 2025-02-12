@@ -1,5 +1,9 @@
 package collection.listEx.sorting.comparator;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,7 +14,8 @@ import java.util.List;
 //    임준오 48세
 public class Main1 {
     public static void main(String[] args) {
-
+        @ToString
+        @Getter
         class User {
             private String name;
             private int age;
@@ -20,13 +25,7 @@ public class Main1 {
                 this.age = age;
             }
 
-            public String getName() {
-                return name;
-            }
 
-            public int getAge() {
-                return age;
-            }
         }
         //List에 5명의 사용자 저장 후 정렬
         List<User> users = new ArrayList<User>();
