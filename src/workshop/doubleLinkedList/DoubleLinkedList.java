@@ -39,7 +39,7 @@ public class DoubleLinkedList<T> {
             this.data = data;
         }
     }
-
+   //새로운 노드 추가 기능
     public void addNode(T data) {
         if (this.head == null) {
             this.head = new Node<T>(data);
@@ -54,7 +54,7 @@ public class DoubleLinkedList<T> {
             this.tail = node.next;
         }
     }
-
+   //전체 노드 정보 출력
     public void printAll() {
         if (this.head != null) {
             Node<T> node = this.head;
