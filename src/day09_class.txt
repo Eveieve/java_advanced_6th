@@ -20,6 +20,16 @@ Node 와 Branch(가지)를 이용해서 , 사이클을 이루지 않도록 구�
 
     데이터 탐색(검색)
 
+ 3. 컬렉션 프레임워크의 대부분의 클래스들은 싱글 스레드 환경에서 사용하도록 설계되어 있음
+    Vecotr, Hashtable이 동기화된 (Synchronized) 메소드로 구성되어 있어 스레드 환경에서 데이터를 안전하게 처리할 수 있다.
+
+    List<T>  synchronizedList(List<T> list)  : List를 동기화된 List 리턴
+    Set<T>   synchronizedSet(Set<T> set)
+    Map<T>   synchronizedMap(Map<T> map)
+
+    List<T> list = Collections.synchronizedList(new ArrayList<T>());
+
+
 
 
 
