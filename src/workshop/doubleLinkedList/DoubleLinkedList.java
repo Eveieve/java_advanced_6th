@@ -106,6 +106,7 @@ public class DoubleLinkedList<T> {
         }else if(this.head.data == existedData){
             Node<T> newHead = new Node<T>(addData);
             newHead.next = this.head;
+            this.head = newHead;
             this.head.next.prev = this.head;
             return true;
         } else {
