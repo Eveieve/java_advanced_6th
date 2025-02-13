@@ -80,13 +80,11 @@ public class NodeMgmt {
 
 
 
-
-
         return null;
     }
 
 
-
+    // 노드 삭제  boolean delete(int data);   추가 팀 과제
 
 
 }
