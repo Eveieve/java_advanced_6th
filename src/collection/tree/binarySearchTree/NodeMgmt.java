@@ -53,6 +53,41 @@ public class NodeMgmt {
         return true;
     }
 
+    public Node search(int data){
+        //CASE 1 : Node가 하나도 없을때
+          if(this.head == null){
+              return null;
+         //CASE 2 : Node가 하나 이상일때
+          } else {
+              Node findNode = this.head;
+              while(findNode  != null){
+                   if(findNode.value == data ){
+                       return findNode;
+                   } else if(data < findNode.value){
+                       findNode = findNode.left;
+                  } else {
+                       findNode = findNode.right;
+                   }
+
+
+
+              }
+
+
+
+
+          }
+
+
+
+
+
+        return null;
+    }
+
+
+
+
 
 }
 
