@@ -1,4 +1,4 @@
-package lambda;
+package lambda.ex01;
 
 @FunctionalInterface
 public interface Calculable {

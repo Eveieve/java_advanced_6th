@@ -1,4 +1,4 @@
-package lambda;
+package lambda.ex01;
 
 public class WorkMain {
     public static void main(String[] args) {
