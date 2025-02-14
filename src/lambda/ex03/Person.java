@@ -15,8 +15,8 @@ public class Person {
         this.y = y;
     }
 
-    public void calculate(Calculable calculable) {
-        double result = calculable.calculate(this.x, this.y);
+    public void action(Calculable calculable) {
+        double result = calculable.calculate(20, 5);
         System.out.println("결과 :" + result);
     }
 }
