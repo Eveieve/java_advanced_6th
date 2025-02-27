@@ -15,13 +15,13 @@ public class DBUtil {
 
     // static 초기화 블럭 - 왜 초기화블럭에서 실행할까?
     static {
-        bundle = ResourceBundle.getBundle("src/jdbc/advanced/boards/config/dbinfo");
+        bundle = ResourceBundle.getBundle("jdbc.advanced.boards.config.dbinfo");
 
         try {
             Class.forName(bundle.getString("driver"));
             //Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            System.out.println("드라이버 로딩 실패~~~");
+            System.out.println("드라이버 로딩 실패");
             e.printStackTrace();
         }
 
