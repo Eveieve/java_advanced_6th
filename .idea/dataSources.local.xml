@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-243.23654.189">
-    <data-source name="@localhost" uuid="0f1b74f5-9bd4-4615-b1c4-af143b504071">
+    <data-source name="root" uuid="5ef29c72-d797-4e82-a290-2ed889905c21">
       <database-info product="MySQL" version="8.0.17" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.17" exact-driver-version="8.2">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -13,7 +13,8 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="information_schema" />
+            <name qname="ssg" />
+            <name qname="@" />
             <name qname="movies" />
           </node>
         </introspection-scope>
