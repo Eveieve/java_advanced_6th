@@ -10,3 +10,12 @@ create table boards (
     bfilename       varchar(50)     null,
     bfiledata		longblob	    null
 );
+
+
+
+
+
+
+
+
+

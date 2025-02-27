@@ -26,7 +26,7 @@ public class boardInsert {
                     "VALUES (?,?,?,now(),?,?); ";
 
             //매개변수화된 SQL문 작성
-
+            //DB에서 AUTO_INCREMENT 자동으로 생성되어진 Key(bno)를 가져오는 쿼리
             PreparedStatement pstmt = connection.prepareStatement(query , Statement.RETURN_GENERATED_KEYS);
 
              pstmt.setString(1,"봄이로구나");
@@ -50,10 +50,6 @@ public class boardInsert {
                   rs.close();
 
             }
-
-
-
-
 
             //5. PreparedStatement 객체 닫기
             pstmt.close();

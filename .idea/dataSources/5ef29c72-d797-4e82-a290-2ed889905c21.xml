@@ -975,109 +975,149 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="286" parent="278" name="users">
+    <table id="286" parent="278" name="jdbc_board">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="287" parent="284" name="movie_id">
+    <table id="287" parent="278" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="288" parent="284" name="movie_id">
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="288" parent="284" name="movie_title">
+    <column id="289" parent="284" name="movie_title">
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="289" parent="284" name="movie_director">
+    <column id="290" parent="284" name="movie_director">
       <Position>3</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <column id="290" parent="284" name="movie_star">
+    <column id="291" parent="284" name="movie_star">
       <Position>4</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <column id="291" parent="284" name="movie_script">
+    <column id="292" parent="284" name="movie_script">
       <Position>5</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="292" parent="284" name="movie_film">
+    <column id="293" parent="284" name="movie_film">
       <Position>6</Position>
       <StoredType>longblob|0s</StoredType>
     </column>
-    <column id="293" parent="285" name="bno">
+    <column id="294" parent="285" name="bno">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="294" parent="285" name="btitle">
+    <column id="295" parent="285" name="btitle">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="295" parent="285" name="bcontent">
+    <column id="296" parent="285" name="bcontent">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="296" parent="285" name="bwriter">
+    <column id="297" parent="285" name="bwriter">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="297" parent="285" name="bdate">
+    <column id="298" parent="285" name="bdate">
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>5</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="298" parent="285" name="bfilename">
+    <column id="299" parent="285" name="bfilename">
       <Position>6</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="299" parent="285" name="bfiledata">
+    <column id="300" parent="285" name="bfiledata">
       <Position>7</Position>
       <StoredType>longblob|0s</StoredType>
     </column>
-    <index id="300" parent="285" name="PRIMARY">
+    <index id="301" parent="285" name="PRIMARY">
       <ColNames>bno</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="301" parent="285" name="PRIMARY">
+    <key id="302" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="302" parent="286" name="userid">
+    <column id="303" parent="286" name="board_no">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="304" parent="286" name="board_title">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="305" parent="286" name="board_content">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <column id="306" parent="286" name="board_writer">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="307" parent="286" name="board_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="308" parent="286" name="PRIMARY">
+      <ColNames>board_no</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="309" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="310" parent="287" name="userid">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="303" parent="286" name="username">
+    <column id="311" parent="287" name="username">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="304" parent="286" name="userpassword">
+    <column id="312" parent="287" name="userpassword">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="305" parent="286" name="userage">
+    <column id="313" parent="287" name="userage">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>decimal(3)|0s</StoredType>
     </column>
-    <column id="306" parent="286" name="useremail">
+    <column id="314" parent="287" name="useremail">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <index id="307" parent="286" name="PRIMARY">
+    <index id="315" parent="287" name="PRIMARY">
       <ColNames>userid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="308" parent="286" name="PRIMARY">
+    <key id="316" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
