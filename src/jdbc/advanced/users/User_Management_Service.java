@@ -1,38 +1,39 @@
 package jdbc.advanced.users;
 
+import jdbc.boards.Board;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  * packageName   : jdbc.advanced.users
  * fileName      : User_Management_Service
- * author        : a
+ * author        : sym
  * date          : 2025-02-28
  * description   :
- *
- * 	회원을 관리하는 프로그램을 작성하시오.   => 자신 코드 스타일로 stream, lamda 사용하셔도 됩니다.
- * 	(어제 만든 ssgdb.users 테이블 이용)
- *
- * 	아래 메뉴의 기능을 모두 구현하시오. (CRUD기능 구현하기)
- * 	메뉴 예시)
- * 		== 작업 선택 ==
- * 		1. 자료 추가
- * 		2. 자료 삭제
- * 		3. 자료 수정
- * 		4. 전체 자료 출력
- * 		0. 작업 끝.
- *
- * 	처리조건)
- * 	1) 자료 추가에서 '회원ID'는 중복되지 않는다.(중복되면 다시 입력 받는다.)
- * 	2) 삭제는 '회원ID'를 입력 받아서 처리한다.
- * 	3) 자료 수정에서 '회원ID'는 변경되지 않는다.
- *
- *
- * */
-
+ * <p>
+ * 회원을 관리하는 프로그램을 작성하시오.   => 자신 코드 스타일로 stream, lamda 사용하셔도 됩니다.
+ * <p>
+ * <p>
+ * 아래 메뉴의 기능을 모두 구현하시오. (CRUD기능 구현하기)
+ * 메뉴 예시)
+ * == 작업 선택 ==
+ * 1. 자료 추가
+ * 2. 자료 삭제
+ * 3. 자료 수정
+ * 4. 전체 자료 출력
+ * 0. 작업 끝.
+ * <p>
+ * 처리조건)
+ * 1) 자료 추가에서 '회원ID'는 중복되지 않는다.(중복되면 다시 입력 받는다.)
+ * 2) 삭제는 '회원ID'를 입력 받아서 처리한다.
+ * 3) 자료 수정에서 '회원ID'는 변경되지 않는다.
+ */
 public class User_Management_Service {
 
 
@@ -40,12 +41,19 @@ public class User_Management_Service {
     private Scanner scan = new Scanner(System.in);
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         new User_Management_Service().memberStart();
     }
 
 
-
+    /**
+     * Member start.
+     */
     public void memberStart(){
         while(true){
             int choice = displayMenu();
@@ -107,7 +115,18 @@ public class User_Management_Service {
             //DB 연결  후 쿼리 작성
             conn = DBUtil.getConnection();
 
-            String sql =
+            String sql = new StringBuilder()
+                    .append("INSERT INTO MYMEMBER (memId, memName, memPass, memTel, memAddr)")
+                    .append(" VALUES(?,?,?,?,?);").toString();
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, memId);
+            pstmt.setString(2, memName);
+            pstmt.setString(3, memPass);
+            pstmt.setString(4, memTel);
+            pstmt.setString(5, memAddr);
+
+            int cnt = pstmt.executeUpdate();
 
             if( cnt>0 ){
                 System.out.println("회원 정보 추가 성공!!!");
@@ -138,9 +157,14 @@ public class User_Management_Service {
         try {
             conn = DBUtil.getConnection();
 
-            String sql =
+            String sql = new StringBuilder()
+                    .append("DELETE FROM MYMEMBER ")
+                    .append("WHERE memId = ? ").toString();
 
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, memId);
 
+            int cnt = pstmt.executeUpdate();
 
             if(cnt>0){
                 System.out.println("회원ID가 " + memId + "인 회원 삭제 성공!!");
@@ -190,7 +214,24 @@ public class User_Management_Service {
         String newMemAddr = scan.nextLine();
 
         try {
+            conn = DBUtil.getConnection();
 
+             String sql = new StringBuilder()
+                     .append("UPDATE MYMEMBER SET ")
+                     .append("memName = ?, ")
+                     .append("memPass = ?, ")
+                     .append("memTel = ?, ")
+                     .append("memAddr = ? ")
+                     .append("WHERE memId = ?").toString();
+
+             pstmt = conn.prepareStatement(sql);
+             pstmt.setString(1, newMemName);
+             pstmt.setString(2, newMemPass);
+             pstmt.setString(3, newMemTel);
+             pstmt.setString(4, newMemAddr);
+             pstmt.setString(5, memId);
+
+             int cnt = pstmt.executeUpdate();
 
             if(cnt>0){
                 System.out.println(memId + "회원 정보 수정 완료!!!");
@@ -237,13 +278,13 @@ public class User_Management_Service {
             num = scan.nextInt();
 
             switch(num){
-                case 1 : updateField = "mem_name";
+                case 1 : updateField = "memName";
                     updateTitle = "회원이름"; break;
-                case 2 : updateField = "mem_pass";
+                case 2 : updateField = "memPass";
                     updateTitle = "비밀번호"; break;
-                case 3 : updateField = "mem_tel";
+                case 3 : updateField = "memTel";
                     updateTitle = "전화번호"; break;
-                case 4 : updateField = "mem_addr";
+                case 4 : updateField = "memAddr";
                     updateTitle = "회원주소"; break;
                 default :
                     System.out.println("수정할 항목을 잘못 선택했습니다.");
@@ -257,6 +298,20 @@ public class User_Management_Service {
         String updateData = scan.nextLine();
 
         try {
+            conn = DBUtil.getConnection();
+
+            String sql = new StringBuilder()
+                    .append("UPDATE MYMEMBER SET ")
+                    .append(updateField)
+                    .append(" = ?")
+                    .append("WHERE memId = ?").toString();
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, updateData);
+            pstmt.setString(2, memId);
+
+
+            int cnt = pstmt.executeUpdate();
 
             if(cnt>0){
                 System.out.println(memId + " 회원 정보 수정 완료!!!");
@@ -275,22 +330,44 @@ public class User_Management_Service {
 
 
     // 전체 회원 정보를 출력하는 메서드
-    private void displayMember(){
+    private ArrayList<User> displayMember(){
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-
+        ArrayList<User>  userlist = new ArrayList<User>();
         System.out.println();
-        System.out.println("===============================================");
-        System.out.println(" 회원ID   회원이름  비밀번호   전화번호    주 소");
-        System.out.println("===============================================");
+        System.out.println("=====================================================");
+        System.out.println(" 회원ID     회원이름    비밀번호     전화번호      주 소");
+        System.out.println("=====================================================");
 
         try {
             conn = DBUtil.getConnection();
 
+            String sql = new StringBuilder()
+                    .append("SELECT * FROM MYMEMBER;").toString();
 
-            System.out.println("===============================================");
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                User user = new User();
+                user.setMemId(rs.getString("memId"));
+                user.setMemName(rs.getString("memName"));
+                user.setMemPass(rs.getString("memPass"));
+                user.setMemTel(rs.getString("memTel"));
+                user.setMemAddr(rs.getString("memAddr"));
+
+                userlist.add(user);
+            }
+            stmt.close();
+
+            for(User user : userlist){
+                System.out.print(" "+ user.getMemId() + "     " + user.getMemName() + "      " + user.getMemPass() + "      " + user.getMemTel() + "     " + user.getMemAddr());
+                System.out.println();
+            }
+
+            System.out.println("====================================================");
             System.out.println("출력 작업 끝...");
+
 
 
         } catch (SQLException e) {
@@ -300,7 +377,7 @@ public class User_Management_Service {
             if(stmt!=null) try{ stmt.close();   }catch(SQLException e){}
             if(conn!=null) try{ conn.close();   }catch(SQLException e){}
         }
-
+               return userlist;
     }
 
     // 회원ID를 인수값으로 받아서 해당 회원ID의 개수를 반환하는 메서드
@@ -311,6 +388,16 @@ public class User_Management_Service {
 
         int count = 0;
         try {
+            conn = DBUtil.getConnection();
+            String sql = new StringBuilder()
+                    .append("SELECT memID FROM MYMEMBER;").toString();
+
+            pstmt = conn.prepareStatement(sql);
+
+            rs = pstmt.executeQuery(sql);
+            while (rs.next()) {
+                if(rs.getString("memId").equals(memId)) count++;
+            }
 
 
         } catch (SQLException e) {
