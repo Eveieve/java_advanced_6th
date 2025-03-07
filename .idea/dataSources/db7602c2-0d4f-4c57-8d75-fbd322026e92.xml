@@ -974,11 +974,11 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="277" parent="1" name="sakila">
-      <LastIntrospectionLocalTimestamp>2025-03-05.07:13:27</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-06.00:38:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="278" parent="1" name="ssgdb">
-      <LastIntrospectionLocalTimestamp>2025-03-05.07:09:11</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-06.00:38:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="279" parent="1" name="sys">
