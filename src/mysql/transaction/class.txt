@@ -49,4 +49,27 @@ MYSQL 격리 수준 정리
 - REPEATABLE READ : 트랜젝션 내에서 동일한 데이터를 여러 번 조회해도 같은 결과 반환 (MYSQL 기본값)
 - SERIALIZABLE :  가장 엄격한 수준, 트랜잭션을 직렬화하여 실행한다.
 
-결론 : MYSQL 은 REPEATABLE READ 격리 수준을 채택함. 격리 수준은 필요에 따라 조회하고 변경하여 사용할 수 있음 
+결론 : MYSQL 은 REPEATABLE READ 격리 수준을 채택함. 격리 수준은 필요에 따라 조회하고 변경하여 사용할 수 있음
+
+
+use sakila;
+
+create table accouts
+(
+    id    int primary key auto_increment,
+    owner varchar(50) not null,
+    balance int not null default 0,
+    create_at datetime not null
+);
+
+alter table accouts modify  create_at date not null;
+insert into accouts values (null,'ssg1',80, now()),(null,'ssg2',100, now()),(null,'ssg3',100, now());
+
+select * from accouts;
+
+
+update accouts set balance = balance + 100 where id = 1;
+update accouts set balance = balance - 10 where id = 1;
+commit;
+ -- 격리 수준 확인 명령어
+show variables like 'transaction_isolation';
