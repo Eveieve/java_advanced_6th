@@ -131,10 +131,19 @@ alter table Charts
     add constraint charts_treat_doc_pat_fk FOREIGN KEY (treat_id,pat_id ,doc_id) REFERENCES Treatments(treat_id,doc_id,pat_id);
 
 
+use ssgdb;
 
+create table account (name varchar(30), balance int);
 
+insert into account values ('박지성',100000);
+insert into account values ('김연아',100000);
 
+start transaction;
+update account set balance = balance - 1000000 where name = '박지성';
+update account set balance = balance + 1000000 where name ='김연아';
+commit;
 
+select * from account;
 
 
 
